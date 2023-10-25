@@ -24,21 +24,35 @@ Beats 98.28% for Time
 Beats 92.16% for memory
 '''
 
-class Solution(object):
-    def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        one = 1 
-        two = 1
-        for i in range(n-1):
-            temp = one
-            one = one + two 
-            two = temp 
-            
-        return one
 
+### Answer that I looked at
+# class Solution(object):
+#     def climbStairs(self, n):
+#         """
+#         :type n: int
+#         :rtype: int
+#         """
+#         one = 1 
+#         two = 1
+#         for i in range(n-1):
+#             temp = one
+#             one = one + two 
+#             two = temp 
+            
+#         return one
+
+
+# 2nd Pass 
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        
+        current = 1
+        previous = 1
+        for i in range(n-1, -1, -1): 
+            next = current + previous
+            previous = current 
+            current = next
+        return previous 
 
 
 if __name__=='__main__':
