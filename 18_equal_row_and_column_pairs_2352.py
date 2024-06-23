@@ -23,3 +23,18 @@ class Solution:
                 res += row_count[column]
 
         return res
+
+    '''
+    Notes:
+
+    Naieve strategy is to for loop through to create lists.
+    Better strategy is to create hashmaps(dictionaries).
+    - Key idea is that you can't hashmap a list, so you need to
+
+    convert to tuple and then compare the tuple version of the row
+      and columns, counting when they are the same.
+
+    You can use from collections import defaultdictionary or you
+      can create the dict from scratch if not allowed to you collections.
+
+    '''
